@@ -1,15 +1,20 @@
 /*
  * check_brackets.c
  *
- *  Created on: 28 lut 2019
+ *  Created on: 28 luty 2019
  *      Author: pawe³.staniak
  */
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
+
 
 //definition of structures
-typedef struct{
+typedef struct node {
+    int val;
+    struct node * next;
+} node_t;
 
 };
 //function -  check characters from terminal
