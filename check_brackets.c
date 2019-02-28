@@ -8,6 +8,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+bool check (char c){
+
+
+	return false;
+}
 
 
 
