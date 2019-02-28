@@ -8,6 +8,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+//definition of structures
+typedef struct{
+
+};
+//function -  check characters from terminal
 bool check (char c){
 
 
@@ -16,7 +21,7 @@ bool check (char c){
 
 
 
-
+//main function
 int main (void){
 
 	char c=0;
