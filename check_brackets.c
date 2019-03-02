@@ -12,15 +12,19 @@
 
 //definition of structures
 typedef struct node {
-    int val;
+    char type;
     struct node * next;
 } node_t;
 
-};
+
 //function -  check characters from terminal
-bool check (char c){
-
-
+bool Matchc (node_t *nd, char c){
+	 if (nd->type == '[' && c == ']')
+	      return true;
+	 if (nd->type == '{' && c == '}')
+	     return true;
+	 if (nd->type == '(' && c == ')')
+	     return true;
 	return false;
 }
 
@@ -29,13 +33,15 @@ bool check (char c){
 //main function
 int main (void){
 
-	char c=0;
+	char next=0;
+	int position=0;
 
 
-	while ((c=getchar())!=EOF){
+	while ((next=getchar())!=EOF){
 
-		printf("%c \n",c);
-
+		printf("%c \n",next);
+		if(next=='\n')printf("Amount of brackets %d \n",position);
+		else position++;
 	}
 
 
