@@ -11,11 +11,13 @@
 
 
 //definition of structures
-typedef struct node {
+ struct node {
     char type;
     struct node * next;
-} node_t;
+};
+ typedef struct node node_t;
 
+node_t stack;
 
 //function -  check characters from terminal
 bool Matchc (node_t *nd, char c){
@@ -28,7 +30,10 @@ bool Matchc (node_t *nd, char c){
 	return false;
 }
 
+void PushStack (node_t st, char c){
 
+	st.=malloc(sizeof(char));
+}
 
 //main function
 int main (void){
@@ -42,6 +47,15 @@ int main (void){
 		printf("%c \n",next);
 		if(next=='\n')printf("Amount of brackets %d \n",position);
 		else position++;
+
+		 if (next == '(' || next == '[' || next == '{') {
+		            // Process opening bracket, write your code here
+		        }
+
+		        if (next == ')' || next == ']' || next == '}') {
+		            // Process closing bracket, write your code here
+		        }
+
 	}
 
 
