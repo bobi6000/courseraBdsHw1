@@ -17,7 +17,7 @@
 };
  typedef struct node node_t;
 
-node_t stack;
+node_t* stack;
 
 //function -  check characters from terminal
 bool Matchc (node_t *nd, char c){
@@ -30,9 +30,22 @@ bool Matchc (node_t *nd, char c){
 	return false;
 }
 
-void PushStack (node_t st, char c){
+void PushFront (node_t **head, char c){
 
-	st.=malloc(sizeof(char));
+	node_t *newNode;
+	newNode=malloc(sizeof(node_t));
+	newNode->type=c;
+	newNode->next=*head;
+}
+
+void PrintList (node_t* stack){
+
+	node_t* current=stack;
+
+	while (current!=NULL){
+		printf("%c \n",current->type);
+		current=current->next;
+	}
 }
 
 //main function
@@ -43,7 +56,7 @@ int main (void){
 
 
 	while ((next=getchar())!=EOF){
-
+		PushFront(&stack,next);
 		printf("%c \n",next);
 		if(next=='\n')printf("Amount of brackets %d \n",position);
 		else position++;
@@ -57,6 +70,7 @@ int main (void){
 		        }
 
 	}
+	PrintList(&stack);
 
 
 	return 0;
